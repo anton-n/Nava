@@ -8,6 +8,8 @@ const path           = require('../path');
 gulp.task('js', function() {
 	return gulp.src([
 		'dev/libs/jquery/jquery-3.2.1.min.js',
+		'dev/libs/jquery.counterup/jquery.counterup.js',
+		'dev/libs/waypoints/lib/jquery.waypoints.js',
 		'dev/js/custom.js',
 		])
 	.pipe(concat('main.js'))
