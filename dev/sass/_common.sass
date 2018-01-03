@@ -4,8 +4,8 @@ html
 *, *::before, *::after
 	box-sizing: inherit
 
-html, body
-	height: 100%
+// html, body
+// 	height: 100%
 
 body
 	font-family: $default-font
@@ -40,25 +40,6 @@ ul li
 textarea
 	resize: none
 
-// .clearfix::after
-// 	content: ""
-// 	display: block
-// 	clear: both
-
-// .container
-// 	max-width: 980px
-// 	width: 100%
-// 	margin: 0 auto
-// 	padding: 0 10px
-
-// body input:focus:required:invalid,
-// body textarea:focus:required:invalid
-// 	color: red
-
-// body input:required:valid,
-// body textarea:required:valid
-// 	color: green
-
 .container
 	max-width: 1170px
 	margin: 0 auto
@@ -69,7 +50,7 @@ textarea
 	max-width: 1500px
 	margin: 0 auto
 	+clr
-	+r(1200)
+	+r(1500)
 		margin: 0 15px
 
 .first-page
@@ -94,11 +75,19 @@ textarea
 	float: left
 	position: relative
 	top: rem(35)
+	+r(900)
+		float: none
+		.logo__img
+			margin: 0 auto
+			margin-bottom: rem(20)
 
 .header__menu
 	float: right
 	position: relative
 	top: rem(42)
+	+r(900)
+		float: none
+		text-align: center
 
 .firs-page__center-block
 	position: absolute
@@ -110,6 +99,10 @@ textarea
 .menu__item
 	display: inline-block
 	vertical-align: middle
+	+r(570)
+		display: block
+		margin-bottom: rem(20)
+
 .menu__link
 	padding: rem(10) rem(30)
 	font-size: em(16)
@@ -133,6 +126,8 @@ textarea
 	font-weight: 700
 	color: #f9fafe
 	margin-bottom: rem(10)
+	+r(900)
+		font-size: em(50)
 
 .center-block__subtitle
 	display: inline-block
@@ -141,8 +136,9 @@ textarea
 	font-weight: 400
 	color: #f9fafe
 	text-transform: uppercase
-
 	margin-bottom: rem(88)
+	+r(900)
+		font-size: em(22)
 
 .search__input
 	display: inline-block
@@ -156,10 +152,21 @@ textarea
 	color: #717171
 	text-transform: uppercase
 	border-radius: 5px 0 0 5px
+	+r(1555)
+		text-align: center
+		border-radius: 0
 	&:focus
 		outline: 0
-	+r(1620)
-		max-width: rem(370)
+	&_soc
+		max-width: rem(270)
+		// width: 100%
+		padding: 0
+		color: #717171
+		font-family: $alt-font
+		font-size: em(14)
+		font-weight: 400
+		line-height: lh(22,14)
+		padding: rem(14) rem(20)
 
 .search__button
 	display: inline-block
@@ -181,6 +188,8 @@ textarea
 	font-weight: 700
 	cursor: pointer
 	transition: .75s linear
+	+r(1555)
+		border-radius: 0
 	&:hover
 		background-color: orange
 	&::before
@@ -191,6 +200,12 @@ textarea
 		content: ''
 		+sprite($s-boat)
 		z-index: 100
+	&_soc
+		max-width: rem(145)
+		height: rem(50)
+		line-height: rem(14)
+		&::before
+			display: none
 
 .destinations
 	position: relative
@@ -209,9 +224,13 @@ textarea
 .statistic__count
 	display: inline-block
 	vertical-align: top
-	margin-right: rem(200)
-	&:last-child
-		margin-right: 0
+	width: 23%
+	// margin-right: rem(200)
+	+r(780)
+		width: 45%
+		margin-bottom: rem(14)
+	+r(560)
+		width: 100%
 
 .statistic__counter
 	font-family: $alt-font
@@ -241,3 +260,309 @@ textarea
 	font-weight: 400
 	color: #717171
 	margin-bottom: rem(80)
+
+.prev__container
+	+clr
+	// padding: 0 rem(15)
+
+.prev__item
+	position: relative
+	height: rem(360)
+	border-radius: 5px
+	float: left
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: 50% 0
+	margin-right: rem(30)
+	margin-bottom: rem(30)
+	&:last-child
+		margin-right: 0
+	+r(1200)
+		margin-right: 0
+
+.prev__item_small
+	width: rem(370)
+	+r(1200)
+		width: 33.3%
+.prev__item_medium
+	width: rem(570)
+	+r(1200)
+		width: 49%
+.prev__item_big
+	width: rem(770)
+	+r(1200)
+		width: 66%
+
+.prev__inner-count
+	display: block
+	width: rem(82)
+	height: rem(42)
+	line-height: rem(42)
+	background-color: #e7434e
+	border-radius: 5px
+	position: absolute
+	left: rem(25)
+	top: rem(25)
+	content: ''
+	font-family: $alt-font
+	font-size: em(16)
+	font-weight: 700
+	text-transform: uppercase
+	text-decoration: none
+	text-align: center
+	color: #fff
+	transition: .75s linear
+	&:hover
+		background-color: orange
+	&:before
+		+sprite($s-boat)
+		display: inline-block
+		vertical-align: baseline
+		margin-right: rem(10)
+		content: ''
+		+r(800)
+			margin-right: rem(5)
+	+r(800)
+		left: rem(10)
+		top: rem(10)
+		font-size: em(14)
+		width: rem(60)
+		height: rem(32)
+		line-height: rem(32)
+
+.prev__inner-name
+	position: absolute
+	left: rem(25)
+	bottom: rem(25)
+	content: ''
+	text-align: left
+
+.prev__country
+	font-size: em(30)
+	font-weight: 400
+	color: #fff
+	margin-bottom: rem(10)
+	+r(800)
+		font-size: em(18)
+		font-weight: 700
+
+.prev__city
+	font-size: em(20)
+	color: #fff
+	+r(800)
+		font-size: em(12)
+		font-weight: 700
+
+.btn
+	display: inline-block
+	max-width: rem(312)
+	width: 100%
+	text-align: center
+	height: rem(60)
+	line-height: rem(62)
+	border: 1px solid #bdbdbd
+	text-decoration: none
+	font-weight: 700
+	font-size: em(14)
+	border-radius: 5px
+	text-transform: uppercase
+	color: #343434
+	transition: .5s linear
+	box-shadow: 0px 0px 7px 0px #ccc
+	+r(800)
+		font-size: em(10)
+		height: rem(40)
+		line-height: rem(42)
+		max-width: rem(212)
+	&:hover
+		background-color: $accent
+		border-color: $accent
+	&_red
+		background-color: red
+		box-shadow: 0px 0px 0px 0px #ccc
+		border-color: #e7434e
+		color: #fff
+
+.btn-warap
+	margin: rem(70) 0
+	+r(800)
+		margin: rem(40) 0
+
+.boat
+	min-height: rem(600)
+	position: relative
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: 50% 100%
+	text-align: center
+	&::before
+		position: absolute
+		left: 0
+		right: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(#222, .5)
+		content: ''
+
+.boat__center
+	position: absolute
+	left: 50%
+	top: 50%
+	transform: translate(-50%, -50%)
+	content: ''
+
+.boat__title
+	font-size: em(72)
+	font-weight: 700
+	color: #fff
+	margin-bottom: rem(20)
+	+r(980)
+		font-size: em(44)
+	+r(600)
+		font-size: em(22)
+
+.boat__descr
+	font-family: $alt-font
+	display: inline-block
+	font-weight: 400
+	font-size: em(30)
+	color: #fff
+	margin-bottom: rem(80)
+	text-transform: uppercase
+	+r(980)
+		font-size: em(24)
+		margin-bottom: rem(55)
+	+r(600)
+		font-size: em(18)
+		margin-bottom: rem(25)
+
+
+.featured
+	text-align: center
+	padding: rem(90) 0
+
+.featured__title
+	font-size: em(30)
+	font-weight: 400
+	color: #343435
+	margin-bottom: rem(20)
+
+.featured__description
+	font-family: $alt-font
+	font-size: em(16)
+	font-weight: 400
+	color: #717171
+	margin-bottom: rem(80)
+
+.btn-wrap
+	margin-top: rem(69)
+
+.footer
+	background-color: #404040
+	background-image: url("../img/footer-sprite.jpg")
+	background-repeat: repeat-x
+	background-position: 0 0
+	// height: rem(325)
+	padding: rem(60) 0
+
+.footer
+	height: 374px 
+	position: fixed
+	bottom: 0
+	z-index: 100
+	left: 0
+	right: 0
+	// text-align: center
+
+.wrapper
+	background: #fff
+	position: relative
+	z-index: 200
+	box-shadow: 0 0 10px rgba(#000,.5)
+
+body
+	padding-bottom: 374px
+
+.footer__item
+	float: left
+	// display: inline-block
+	vertical-align: top
+	width: 20%
+	// text-align: left
+	// width: rem(175)
+	// margin-right: rem(70)
+	color: #fff
+	margin-bottom: rem(20)
+	&:last-child
+		margin-right: 0
+	&_soc
+		// width: rem(420)
+		width: 38%
+
+
+.footer .container
+	+clr
+
+.footer__title
+	font-weight: 700
+	font-size: em(14)
+	margin-bottom: rem(24)
+
+.footer__link
+	font-family: $alt-font
+	font-weight: 400
+	font-size: em(14)
+	color: #fff
+	text-decoration: none
+	word-wrap: wrap
+	transition: .5s linear
+	&:hover
+		color: $accent
+
+.footer__items
+	margin-bottom: rem(20)
+	color: #fff
+	&:last-child
+		margin-bottom: 0
+
+.soc__title
+	margin-bottom: rem(20)
+	+r(1200)
+		text-align: center
+
+.soc__search
+	margin-bottom: rem(36)
+	+r(1200)
+		text-align: center
+
+.soc__socials
+	// max-width: rem(400)
+	width: 100%
+	+r(1200)
+		text-align: center
+
+.soc__item
+	display: inline-block
+	position: relative
+	width: rem(44)
+	height: rem(44)
+	line-height: rem(44)
+	background-color: #717171
+	border-radius: 50%
+	margin-right: rem(18)
+	box-shadow: inset 0 0 5px rgba(#000, .75)
+	transition: .5s linear
+	&:hover
+		background-color: $accent
+	&::before
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		content: ''
+.soc__item.fb::before
+	+sprite($s-fb)
+.soc__item.tw::before
+	+sprite($s-tw)
+.soc__item.google::before
+	+sprite($s-google)
